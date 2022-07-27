@@ -3,7 +3,7 @@ import TabBar from './components/TabBar.vue'
 import SideMenu from './components/SideMenu.vue'
 import { ref } from 'vue'
 
-let show = ref<boolen>(false)
+let show = ref<boolean>(false)
 </script>
 
 <template>
