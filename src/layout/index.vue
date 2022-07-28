@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang='ts'>
 import TabBar from './components/TabBar.vue'
 import SideMenu from './components/SideMenu.vue'
 import { ref } from 'vue'

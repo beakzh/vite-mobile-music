@@ -1,11 +1,67 @@
 import { defineStore } from 'pinia'
-import type { userState } from '@/types/userTypes'
+import { getToken } from '@/utils/auth'
+import { reqLoginByPhone, reqLoginByEmail } from '@/api/user'
+import { LoginPhoneParams, LoginEmailParams } from '@/types/api/user'
+import { setToken } from '@/utils/auth'
+
+export interface userInfo {
+	accountStatus: number
+	accountType: number
+	anchor: boolean
+	authStatus: number
+	authenticated: boolean
+	authenticationTypes: number
+	authority: number
+	// eslint-disable-next-line
+	avatarDetail: any
+	avatarImgId: number
+	avatarUrl: string
+	backgroundImgId: number
+	backgroundUrl: string
+	birthday: number
+	city: number
+	createTime: number
+	defaultAvatar: boolean
+	// eslint-disable-next-line
+	description: any
+	// eslint-disable-next-line
+	detailDescription: any
+	djStatus: number
+	// eslint-disable-next-line
+	expertTags: any
+	// eslint-disable-next-line
+	experts: any
+	followed: boolean
+	gender: number
+	lastLoginIP: string
+	lastLoginTime: number
+	locationStatus: number
+	mutual: boolean
+	nickname: string
+	province: number
+	// eslint-disable-next-line
+	remarkName: any
+	shortUserName: string
+	// eslint-disable-next-line
+	signature: any
+	userId: number
+	userName: string
+	userType: number
+	vipType: number
+	viptypeVersion: number
+}
+
+export interface userState {
+	token: string
+	userInfo: userInfo
+	likeList: Array<number>
+}
 
 export const useUserStore = defineStore('user', {
-    state: ():userState => ({
-        token:'',
-        userInfo: {
-            accountStatus: 0,
+	state: (): userState => ({
+		token: getToken(),
+		userInfo: {
+			accountStatus: 0,
 			accountType: 0,
 			anchor: false,
 			authStatus: 0,
@@ -41,10 +97,40 @@ export const useUserStore = defineStore('user', {
 			userName: '',
 			userType: 0,
 			vipType: 0,
-			viptypeVersion: 0
-        },
-        likeList: []
-    }),
-    actions: {},
-    getters: {}
+			viptypeVersion: 0,
+		},
+		likeList: [],
+	}),
+	actions: {
+		loginByPhone(params: LoginPhoneParams) {
+			return new Promise((resolve, reject) => {
+				reqLoginByPhone(params)
+					.then((res: any) => {
+						console.log(res)
+						this.token = res.cookie
+						setToken(res.cookie)
+						resolve(res)
+					})
+					.catch(err => {
+						reject(err)
+					})
+			})
+		},
+		loginByEmail(params: LoginEmailParams) {
+			return new Promise((resolve, reject) => {
+				reqLoginByEmail(params)
+					.then((res: any) => {
+						this.token = res.cookie
+						setToken(res.cookie)
+						resolve(res)
+					})
+					.catch(err => {
+						reject(err)
+					})
+			})
+		},
+	},
+	getters: {
+		isLogin: state => (state.token ? true : false),
+	},
 })

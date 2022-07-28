@@ -34,7 +34,7 @@ export default defineConfig({
     // 设置代理，根据我们项目实际情况配置
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8000',
+        target: 'http://localhost:3000',
         changeOrigin: true,
         secure: false,
         rewrite: path => path.replace(/^\/api/, '')
