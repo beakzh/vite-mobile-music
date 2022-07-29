@@ -1,14 +1,20 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import TabBar from './components/TabBar.vue'
 import SideMenu from './components/SideMenu.vue'
+import $bus from '@/utils/eventBus'
+import type { SwipeCellInstance } from 'vant'
 import { ref } from 'vue'
 
 let show = ref<boolean>(false)
+let swipe = ref<SwipeCellInstance>()
+$bus.on('openMenu', ():void => {
+	swipe.value?.open('left')
+})
 </script>
 
 <template>
 	<div class="layout">
-		<van-swipe-cell @open="show = true" @close="show = false">
+		<van-swipe-cell @open="show = true" @close="show = false" ref="swipe">
 			<template #left>
 				<SideMenu />
 			</template>

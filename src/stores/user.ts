@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import { getToken } from '@/utils/auth'
-import { reqLoginByPhone, reqLoginByEmail } from '@/api/user'
+import { reqLoginByPhone, reqLoginByEmail, getUserInfo, reqLoginOut } from '@/api/user'
 import { LoginPhoneParams, LoginEmailParams } from '@/types/api/user'
-import { setToken } from '@/utils/auth'
+import { setToken, removeToken } from '@/utils/auth'
 
 export interface userInfo {
 	accountStatus: number
@@ -127,6 +127,66 @@ export const useUserStore = defineStore('user', {
 					.catch(err => {
 						reject(err)
 					})
+			})
+		},
+		getInfo() {
+			return new Promise((resolve, reject) => {
+				getUserInfo()
+					.then((res: any) => {
+						this.userInfo = res.profile
+						resolve(res)
+					})
+					.catch(err => reject(err))
+			})
+		},
+		loginOut() {
+			return new Promise((resolve, reject) => {
+				reqLoginOut()
+					.then((res: any) => {
+						this.token = ''
+						this.userInfo = {
+							accountStatus: 0,
+							accountType: 0,
+							anchor: false,
+							authStatus: 0,
+							authenticated: false,
+							authenticationTypes: 0,
+							authority: 0,
+							avatarDetail: null,
+							avatarImgId: 0,
+							avatarUrl: '',
+							backgroundImgId: 0,
+							backgroundUrl: '',
+							birthday: 0,
+							city: 0,
+							createTime: 0,
+							defaultAvatar: false,
+							description: null,
+							detailDescription: null,
+							djStatus: 0,
+							expertTags: null,
+							experts: null,
+							followed: false,
+							gender: 0,
+							lastLoginIP: '',
+							lastLoginTime: 0,
+							locationStatus: 0,
+							mutual: false,
+							nickname: '',
+							province: 0,
+							remarkName: null,
+							shortUserName: '',
+							signature: null,
+							userId: 0,
+							userName: '',
+							userType: 0,
+							vipType: 0,
+							viptypeVersion: 0,
+						}
+						removeToken()
+						resolve(res)
+					})
+					.catch(err => reject(err))
 			})
 		},
 	},

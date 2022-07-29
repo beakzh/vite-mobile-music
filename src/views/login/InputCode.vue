@@ -3,7 +3,7 @@ import VerifyCode from '@/components/VerifyCode/index.vue'
 import { Toast } from 'vant'
 import { goBack } from '@/utils/back'
 import { ref, watch } from 'vue'
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '@/stores'
 import { useRouter } from 'vue-router'
 
 const loginPhone = sessionStorage.getItem('loginPhone') || ''

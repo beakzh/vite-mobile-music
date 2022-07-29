@@ -6,5 +6,6 @@ import { createPinia } from 'pinia'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import '@/assets/iconfont/iconfont.css'
+import './permission'
 
 createApp(App).use(router).use(createPinia()).use(Vant).mount('#app')

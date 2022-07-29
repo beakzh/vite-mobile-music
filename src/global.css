@@ -8,3 +8,8 @@
 html {
     font-size: 10vw;
 }
+.flex_box_center_column {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
