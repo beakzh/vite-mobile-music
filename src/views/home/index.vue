@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Swiper from './components/Swiper.vue'
+import { Swiper, Menu, RecommendSongList } from './components'
 import { reqSearchDefault } from '@/api/search'
 import $bus from '@/utils/eventBus'
 import { ref } from 'vue'
@@ -14,7 +14,7 @@ let openMenu = () => $bus.emit('openMenu')
 
 const loading = ref<boolean>(false)
 let onRefresh = () => {
-    getSearchDefault()
+	getSearchDefault()
 	setTimeout(() => {
 		loading.value = false
 	}, 2000)
@@ -42,9 +42,12 @@ getSearchDefault()
 					</div>
 				</div>
 			</van-sticky>
-            <div class="content">
-                <Swiper />
-            </div>
+			<div class="content">
+				<Swiper />
+				<Menu />
+				<div class="line"></div>
+				<RecommendSongList />
+			</div>
 		</van-pull-refresh>
 	</div>
 </template>
@@ -86,8 +89,12 @@ getSearchDefault()
 			}
 		}
 	}
-    .content {
-        padding: 0 0.3rem;
-    }
+	.content {
+		padding: 0 0.3rem;
+		.line {
+			background: var(--van-gray-3);
+			height: 2px;
+		}
+	}
 }
 </style>
