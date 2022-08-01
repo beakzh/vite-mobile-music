@@ -67,21 +67,20 @@ let scroll = (e: Event): void => {
 	}
 	.menu-list {
 		display: flex;
-		gap: 0 15px;
 		.menu-item {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			flex-shrink: 0;
-			min-width: 55px;
+			min-width: 140px;
 			.icon-wrapper {
 				background: #fef1f1;
-				width: 45px;
-				height: 45px;
+				width: 80px;
+				height: 80px;
 				border-radius: 50%;
 				.iconfont {
 					color: #e20001;
-					font-size: 20px;
+					font-size: 40px;
 				}
 			}
 			.menu-name {

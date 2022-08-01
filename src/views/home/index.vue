@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Swiper, Menu, RecommendSongList } from './components'
+import { Swiper, Menu, RecommendSongList, NewSong } from './components'
 import { reqSearchDefault } from '@/api/search'
 import $bus from '@/utils/eventBus'
 import { ref } from 'vue'
@@ -47,6 +47,7 @@ getSearchDefault()
 				<Menu />
 				<div class="line"></div>
 				<RecommendSongList />
+				<NewSong />
 			</div>
 		</van-pull-refresh>
 	</div>
@@ -57,6 +58,7 @@ getSearchDefault()
 	background: var(--my-back-color-gray);
 	box-sizing: border-box;
 	height: 100vh;
+	overflow-y: scroll;
 	.header {
 		padding: 0 0.2rem;
 		height: 1.1rem;

@@ -12,10 +12,12 @@
     "axios": "^0.27.2",
     "js-cookie": "^3.0.1",
     "less": "^3.0.4",
+    "less-loader": "^11.0.0",
     "lib-flexible": "^0.3.2",
     "mitt": "^3.0.0",
     "pinia": "^2.0.17",
     "postcss-pxtorem": "^5.1.1",
+    "swiper": "^8.3.2",
     "vant": "^3.5.2",
     "vue": "^3.2.37",
     "vue-router": "^4.0.13"
