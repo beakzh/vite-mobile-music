@@ -86,7 +86,7 @@ let scroll = (e: Event): void => {
 			.menu-name {
 				margin-top: 5px;
 				color: #999;
-				font-size: 12px;
+				font-size: 24px;
 			}
 		}
 	}

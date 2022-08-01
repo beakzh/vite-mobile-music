@@ -26,13 +26,21 @@ const props = withDefaults(defineProps<Prop>(), {
 <template>
 	<div class="songlist-item">
 		<div class="cover">
-			<img class="cover-img" :src="songListData.picUrl? songListData.picUrl : songListData.coverImgUrl + '?param=140y140'" alt="" />
+			<img
+				class="cover-img"
+				:src="
+					songListData.picUrl
+						? songListData.picUrl
+						: songListData.coverImgUrl + '?param=140y140'
+				"
+				alt=""
+			/>
 			<div class="playcount">
 				<i class="iconfont icon-bofang"></i>
 				<div>{{ formatCountNumber(songListData.playCount) }}</div>
 			</div>
 		</div>
-		<div class="songlist-title text_over_two_lines">{{ songListData.name }}</div>
+		<div class="song-list-title text_over_two_lines">{{ songListData.name }}</div>
 	</div>
 </template>
 
@@ -50,12 +58,16 @@ const props = withDefaults(defineProps<Prop>(), {
 			top: 15px;
 			right: 15px;
 			display: flex;
-			gap: 0 5px;
-			color:#fff;
+			align-items: center;
+			gap: 0 6px;
+			color: #fff;
 			background: rgba(0, 0, 0, 0.2);
 			padding: 5px;
 			border-radius: 10px;
-			font-size: 17px;
+			font-size: 24px;
+			.iconfont {
+				font-size: 24px;
+			}
 		}
 		.cover-img {
 			width: 100%;
@@ -63,8 +75,11 @@ const props = withDefaults(defineProps<Prop>(), {
 			border-radius: 20px;
 		}
 	}
-	.songlist-title {
+	.song-list-title {
 		width: 200px;
+		font-size: 24px;
+		margin-top: 5px;
+		color: var(--my-text-color-black);
 	}
 }
 </style>

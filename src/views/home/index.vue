@@ -59,6 +59,7 @@ getSearchDefault()
 	box-sizing: border-box;
 	height: 100vh;
 	overflow-y: scroll;
+	padding-bottom: 200px;
 	.header {
 		padding: 0 0.2rem;
 		height: 1.1rem;

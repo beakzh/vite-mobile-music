@@ -2,7 +2,8 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import Title from '@/components/Title/index.vue'
-import { songData } from '@/types/public'
+import NewSongItem from './NewSongItem.vue'
+import type { songData } from '@/types/public'
 import { getRecommendNewSongs } from '@/api/home'
 import { ref } from 'vue'
 
@@ -32,7 +33,7 @@ getList()
 </script>
 
 <template>
-	<div class="new-song">
+	<div class="new-song" @touchmove="(e) => e.stopPropagation()">
 		<Title title="新歌推荐" icon="play" position="left" btn-text="播放" />
 		<van-skeleton title :row="1" :loading="loading">
 			<swiper
@@ -40,28 +41,9 @@ getList()
 				:space-between="20"
 				navigation
 				:pagination="{ clickable: true }"
-				:scrollbar="{ draggable: true }"
-			>
+				:scrollbar="{ draggable: true }">
 				<swiper-slide v-for="(v, i) in list" :key="i">
-					<div v-for="u in v" :key="u.id" class="wrapper">
-						<div class="new-song-item">
-							<div class="left">
-								<div class="cover">
-									<img
-										class="cover-img"
-										:src="u.picUrl + '?param=140y140'"
-										alt=""
-									/>
-									<i class="iconfont icon-24gf-play"></i>
-								</div>
-								<div>
-									<span>Training</span>
-									<span> - 满舒克</span>
-								</div>
-							</div>
-							<div class="right">111</div>
-						</div>
-					</div>
+					<NewSongItem v-for="u in v" :key="v.id" :song-data="u" />
 				</swiper-slide>
 			</swiper>
 		</van-skeleton>
@@ -74,38 +56,5 @@ getList()
 	box-sizing: border-box;
 	margin-top: 20px;
 	padding: 10px;
-}
-.wrapper {
-	padding: 20px;
-	.new-song-item {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-		.left {
-			display: flex;
-			align-items: center;
-			.cover {
-				position: relative;
-				width: 80px;
-				height: 80px;
-				flex-shrink: 0;
-				border-radius: 20px;
-				.cover-img {
-					width: 100%;
-					height: 100%;
-					border-radius: 10px;
-				}
-				.iconfont {
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					color: #fff;
-					font-size: 24px;
-				}
-			}
-		}
-	}
 }
 </style>
