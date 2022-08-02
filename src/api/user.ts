@@ -1,5 +1,5 @@
 import http from '@/utils/http'
-import { SendCodeParams, LoginPhoneParams, LoginEmailParams } from '@/types/api/user'
+import type { SendCodeParams, LoginPhoneParams, LoginEmailParams } from '@/types/api/user'
 
 /* 
     用户登录信息模块

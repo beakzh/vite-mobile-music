@@ -1,5 +1,5 @@
 import http from '@/utils/http'
-import { RecommendListParams } from '@/types/api/home'
+import type { RecommendListParams } from '@/types/api/home'
 
 /*
     首页

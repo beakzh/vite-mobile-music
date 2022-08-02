@@ -25,3 +25,9 @@ export interface songData {
 	trackNumberUpdateTime: number
 	type: number
 }
+
+// 盒子类型
+export enum BoxType {
+	line = 'line',
+	box = 'box'
+}
