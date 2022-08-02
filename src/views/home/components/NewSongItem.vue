@@ -56,6 +56,8 @@ const singName = computed(() => {
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid  var(--van-gray-3);
 		.left {
 			display: flex;
 			align-items: center;

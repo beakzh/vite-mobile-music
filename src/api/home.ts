@@ -14,5 +14,9 @@ export function getRecommendList(data: RecommendListParams) {
 }
 // 获取推荐新歌
 export function getRecommendNewSongs(data: RecommendListParams) {
-    return http.get('personalized/newsong', data)
+	return http.get('/personalized/newsong', data)
+}
+// 获取最新mv
+export function getNewMvList(data: RecommendListParams) {
+    return http.get('/mv/first', data)
 }

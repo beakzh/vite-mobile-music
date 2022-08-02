@@ -8,11 +8,15 @@ interface ImgList {
 	bannerId: string
 }
 const imgList = ref<ImgList[]>([])
-let getBannerList = async () => {
+let getList = async () => {
 	const res: any = await reqBanner()
 	imgList.value = res.banners
 }
-getBannerList()
+getList()
+
+defineExpose({
+	getList
+})
 </script>
 
 <template>
@@ -27,8 +31,8 @@ getBannerList()
 
 <style lang="less" scoped>
 .swiper {
-    padding: 10px;
-    background-image: linear-gradient(#e8e9eb, #fff);
+	padding: 10px;
+	background-image: linear-gradient(#e8e9eb, #fff);
 	.my-swipe {
 		.swiper-img {
 			width: 100%;

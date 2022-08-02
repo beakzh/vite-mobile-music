@@ -23,13 +23,15 @@ async function getList() {
 			tempList[l].push(songList.value[i])
 		}
 		list.value = tempList
-		console.log(tempList)
-		console.log(res)
 	} catch {
 		loading.value = false
 	}
 }
 getList()
+
+defineExpose({
+	getList
+})
 </script>
 
 <template>

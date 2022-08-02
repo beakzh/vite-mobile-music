@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { Swiper, Menu, RecommendSongList, NewSong } from './components'
+import { Swiper, Menu, RecommendSongList, NewSong, NewMv } from './components'
 import { reqSearchDefault } from '@/api/search'
 import $bus from '@/utils/eventBus'
 import { ref } from 'vue'
+
+const swiper = ref<InstanceType<typeof Swiper>>()
+const recommendSongList = ref<InstanceType<typeof RecommendSongList>>()
+const newSong = ref<InstanceType<typeof NewSong>>()
 
 const showKeyword = ref<string>('')
 let getSearchDefault = async () => {
@@ -14,6 +18,9 @@ let openMenu = () => $bus.emit('openMenu')
 
 const loading = ref<boolean>(false)
 let onRefresh = () => {
+	swiper.value && swiper.value.getList()
+	recommendSongList.value && recommendSongList.value.getList()
+	newSong.value && newSong.value.getList()
 	getSearchDefault()
 	setTimeout(() => {
 		loading.value = false
@@ -43,11 +50,12 @@ getSearchDefault()
 				</div>
 			</van-sticky>
 			<div class="content">
-				<Swiper />
+				<Swiper ref="swiper" />
 				<Menu />
 				<div class="line"></div>
-				<RecommendSongList />
-				<NewSong />
+				<RecommendSongList ref="recommendSongList" />
+				<NewSong ref="newSong" />
+				<NewMv />
 			</div>
 		</van-pull-refresh>
 	</div>

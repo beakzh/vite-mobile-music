@@ -2,7 +2,7 @@
 import SongListItem from '@/components/SongListItem/index.vue'
 import Title from '@/components/Title/index.vue'
 import { getRecommendList } from '@/api/home'
-import { songListFace } from '@/types/public'
+import type { songListFace } from '@/types/public'
 import { ref } from 'vue'
 
 const loading = ref<boolean>(false)
@@ -18,6 +18,10 @@ async function getList() {
 	}
 }
 getList()
+
+defineExpose({
+    getList
+})
 </script>
 
 <template>
