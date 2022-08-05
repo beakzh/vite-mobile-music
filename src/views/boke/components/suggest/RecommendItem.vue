@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<Prop>(), {
 			</van-row>
 		</div>
 		<div v-else>
-            <DjItem v-for="(v ,i) in list.radios" :box-type="boxType" :dj-data="v" />
+            <DjItem v-for="(v ,i) in list.radios" :key="i" :box-type="boxType" :dj-data="v" />
         </div>
 	</div>
 </template>
@@ -38,6 +38,7 @@ const props = withDefaults(defineProps<Prop>(), {
 <style lang="less" scoped>
 .recommend-item {
     background-color: var(--my-back-color-white);
-    padding: 0 10px 20px 10px;
+    padding: 20px 10px 20px 10px;
+    margin-bottom: 20px;
 }
 </style>
