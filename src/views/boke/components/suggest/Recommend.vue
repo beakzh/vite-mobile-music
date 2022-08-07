@@ -12,7 +12,6 @@ async function getList() {
 	const res: any = await getCategoryRecommend()
 	loading.value = false
 	recommendList.value = res.data
-	console.log(recommendList.value)
 }
 getList()
 </script>

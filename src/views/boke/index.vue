@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Suggest from './components/suggest/index.vue'
+import Listen from './components/listen/index.vue'
 import $bus from '@/utils/eventBus'
 import { ref } from 'vue'
 
@@ -20,10 +21,8 @@ let openMenu = () => $bus.emit('openMenu')
 					<i class="iconfont icon-icon_tianjia"></i>
 				</div>
 			</template>
-			<van-tab title="听听">内容 1</van-tab>
-			<van-tab title="推荐">
-				<Suggest />
-			</van-tab>
+			<van-tab title="听听"><Listen /></van-tab>
+			<van-tab title="推荐"><Suggest /></van-tab>
 			<van-tab title="故事">内容 3</van-tab>
 		</van-tabs>
 	</div>
@@ -34,7 +33,6 @@ let openMenu = () => $bus.emit('openMenu')
 	background: var(--my-back-color-gray);
 	box-sizing: border-box;
 	overflow: auto;
-	padding: 0 10px;
 	padding-bottom: 150px;
 	height: 100%;
 	.iconfont {

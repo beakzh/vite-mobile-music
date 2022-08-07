@@ -6,7 +6,8 @@
 	--my-text-color-gray: #949494;
 	--my-color-oranger: #ff7a38;
 	--my-gray-1: #e8e8e8;
-	--my-text-color-white: #fff
+	--my-text-color-white: #fff;
+	--my-primary-color: #e20001
 }
 html {
 	font-size: 10vw;

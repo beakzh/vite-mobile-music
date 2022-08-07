@@ -114,10 +114,15 @@ const props = withDefaults(defineProps<Prop>(), {
             color: var(--my-text-color-black);
         }
         .dj-text {
+			font-size: 23px;
             color: var(--my-text-color-gray);
         }
         .dj-count {
+			font-size: 23px;
             color: var(--my-text-color-gray);
+			.iconfont {
+				margin-right: 5px;
+			}
         }
     }
 }
