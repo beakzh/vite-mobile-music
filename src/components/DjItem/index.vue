@@ -49,6 +49,7 @@ const props = withDefaults(defineProps<Prop>(), {
 
 <style lang="less" scoped>
 .dj-item {
+	margin-bottom: 20px;
 	.cover {
 		width: 100%;
 		height: 100%;
@@ -56,8 +57,8 @@ const props = withDefaults(defineProps<Prop>(), {
 		position: relative;
 		.playcount {
 			position: absolute;
-			top: 15px;
-			right: 15px;
+			top: 10px;
+			right: 10px;
 			display: flex;
 			align-items: center;
 			gap: 0 6px;

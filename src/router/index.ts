@@ -15,8 +15,23 @@ const routes: Array<RouteRecordRaw> = [
 			{
 				path: 'boke',
 				name: 'Boke',
-				component: _ => import('@/views/boke/index.vue')
-			}
+				component: _ => import('@/views/boke/index.vue'),
+			},
+			{
+				path: 'mine',
+				name: 'Mine',
+				component: _ => import('@/views/mine/index.vue'),
+			},
+			{
+				path: 'follow',
+				name: 'Follow',
+				component: _ => import('@/views/follow/index.vue'),
+			},
+			{
+				path: 'village',
+				name: 'Village',
+				component: _ => import('@/views/village/index.vue'),
+			},
 		],
 	},
 	{
@@ -34,11 +49,11 @@ const routes: Array<RouteRecordRaw> = [
 		name: 'InputCode',
 		component: _ => import('@/views/login/InputCode.vue'),
 	},
-    {
-        path: '/emailLogin',
-        name: 'EmailLogin',
-        component: _ => import('@/views/login/EmailLogin.vue')
-    }
+	{
+		path: '/emailLogin',
+		name: 'EmailLogin',
+		component: _ => import('@/views/login/EmailLogin.vue'),
+	},
 ]
 const router = createRouter({
 	history: createWebHistory(),

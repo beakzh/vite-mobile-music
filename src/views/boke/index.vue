@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Suggest from './components/suggest/index.vue'
 import Listen from './components/listen/index.vue'
+import Story from './components/story/index.vue'
 import $bus from '@/utils/eventBus'
 import { ref } from 'vue'
 
@@ -23,7 +24,7 @@ let openMenu = () => $bus.emit('openMenu')
 			</template>
 			<van-tab title="听听"><Listen /></van-tab>
 			<van-tab title="推荐"><Suggest /></van-tab>
-			<van-tab title="故事">内容 3</van-tab>
+			<van-tab title="故事"><Story :cate-id="10001" /></van-tab>
 		</van-tabs>
 	</div>
 </template>

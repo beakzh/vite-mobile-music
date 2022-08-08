@@ -47,7 +47,7 @@ const props = withDefaults(defineProps<Prop>(), {
 				font-size: 30px;
 			}
 			.singer {
-				font-size: 15px;
+				font-size: 25px;
 				color: var(--my-text-color-gray);
 			}
 		}

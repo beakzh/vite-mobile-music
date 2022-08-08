@@ -27,8 +27,5 @@ getList()
 <style lang="less" scoped>
 .list {
     padding:  25px;
-    :deep(.van-col ) {
-        margin-bottom: 20px;
-    }
 }
 </style>
