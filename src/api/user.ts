@@ -33,3 +33,7 @@ export function getUserDetail(data: UidParams) {
 export function reqLikeList(data: UidParams) {
 	return http.get('/likelist', data)
 }
+// 获取用户信息 , 歌单，收藏，mv, dj 数量 /user/subcount
+export function reqUserSubCount () {
+	return http.get('/user/subcount', {})
+}

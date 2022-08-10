@@ -61,6 +61,7 @@ const splitNum: ComputedRef<string[]> = computed(() => (codeVal.value + '').spli
 			li {
 				width: 100px;
 				height: 100px;
+				font-size: 50px;
 				border-bottom: 1px solid #e0e0e0;
 				text-align: center;
 				color: var(--my-text-color-black);

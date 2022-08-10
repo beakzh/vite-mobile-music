@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '@/stores'
 import { storeToRefs } from 'pinia'
 import { reqLikeList } from '@/api/user'
 import { reqSongDetail } from '@/api/song'
@@ -7,7 +7,7 @@ import { ref } from 'vue'
 
 const userStore = useUserStore()
 const { userInfo } = storeToRefs(userStore)
-const url = () => new URL('@/assets/images/public/heijiao.png', import.meta.url).href
+const url = () => new URL('../../../assets/images/public/heijiao.png', import.meta.url).href
 const imgUrl = ref<string>(url())
 const total = ref<number>(0)
 let ids: number[] = []
@@ -81,6 +81,7 @@ getLikeList()
 			font-size: 28px;
 		}
 		.total {
+			font-size: 23px;
 			color: var(--my-text-color-gray);
 		}
 	}

@@ -21,7 +21,7 @@ let getDetail = () => {
 		level.value = res.level
 	})
 }
-getDetail()
+isLogin.value && getDetail()
 
 const appList = computed(() => [
 	{ name: '最近播放', icon: 'icon-bofang1', path: '/recentPlay' },
@@ -35,17 +35,29 @@ const appList = computed(() => [
 	{ name: '音乐罐子', icon: 'icon-zhiboshenqing' },
 ])
 
+// 滚动
+const mine = ref<HTMLDivElement | null>(null)
+const navStyle = reactive({
+	background: 'transparent'
+})
+let scroll = () => {
+	const top = mine.value?.scrollTop || 0
+	if(top < 50) navStyle.background = 'transparent'
+	else navStyle.background = 'var(--my-back-color-white)'
+	
+}
+
 let openMenu = () => $bus.emit('openMenu')
 </script>
 
 <template>
-	<div class="mine">
+	<div class="mine" ref="mine" @scroll="scroll">
 		<van-sticky>
-			<div class="nav">
+			<div class="nav" :style="navStyle">
 				<div class="flex_box_center_column" @click.stop="openMenu">
 					<i class="iconfont icon-caidan"></i>
 				</div>
-				<div>个人中心</div>
+				<div class="center">个人中心</div>
 				<div class="flex_box_center_column">
 					<i class="iconfont icon-sousuo"></i>
 				</div>
@@ -76,9 +88,9 @@ let openMenu = () => $bus.emit('openMenu')
 					</van-row>
 				</div>
 
-                <LikeList />
+				<LikeList />
 
-                <Sheet />
+				<Sheet />
 			</template>
 			<template v-else>
 				<div class="unlogin">
@@ -96,6 +108,8 @@ let openMenu = () => $bus.emit('openMenu')
 	background-color: var(--my-back-color-gray);
 	height: 100%;
 	box-sizing: border-box;
+	overflow: auto;
+	padding-bottom: 100px;
 	.nav {
 		background: transparent;
 		display: flex;
@@ -104,6 +118,9 @@ let openMenu = () => $bus.emit('openMenu')
 		height: 88px;
 		box-sizing: border-box;
 		padding: 10px 20px;
+		.center {
+			font-size: 23px;
+		}
 		.iconfont {
 			font-size: 0.5rem;
 			font-weight: bold;
@@ -185,6 +202,7 @@ let openMenu = () => $bus.emit('openMenu')
 				}
 			}
 			.app-name {
+				font-size: 23px;
 				text-align: center;
 			}
 		}

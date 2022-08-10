@@ -106,7 +106,6 @@ export const useUserStore = defineStore('user', {
 			return new Promise((resolve, reject) => {
 				reqLoginByPhone(params)
 					.then((res: any) => {
-						console.log(res)
 						this.token = res.cookie
 						setToken(res.cookie)
 						resolve(res)
