@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import LikeList from './components/LikeList.vue'
+import Sheet from './components/Sheet.vue'
 import { useUserStore } from '@/stores/user'
 import { storeToRefs } from 'pinia'
 import $bus from '@/utils/eventBus'
-import { reactive, ref, computed } from 'vue'
 import { getUserDetail } from '@/api/user'
+import { reactive, ref, computed } from 'vue'
 
 const userStore = useUserStore()
 const { isLogin, userInfo } = storeToRefs(userStore)
@@ -73,6 +75,10 @@ let openMenu = () => $bus.emit('openMenu')
 						</van-col>
 					</van-row>
 				</div>
+
+                <LikeList />
+
+                <Sheet />
 			</template>
 			<template v-else>
 				<div class="unlogin">
@@ -165,22 +171,22 @@ let openMenu = () => $bus.emit('openMenu')
 		}
 		.app-box {
 			padding: 10px;
-            :deep(.van-col) {
-                margin: 20px 0;
-            }
-            .icon {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 10px;
-                .iconfont {
-                    font-size: 40px;
-                    color: var(--my-primary-color);
-                }
-            }
-            .app-name {
-                text-align: center;
-            }
+			:deep(.van-col) {
+				margin: 20px 0;
+			}
+			.icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 10px;
+				.iconfont {
+					font-size: 40px;
+					color: var(--my-primary-color);
+				}
+			}
+			.app-name {
+				text-align: center;
+			}
 		}
 	}
 }

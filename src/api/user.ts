@@ -29,3 +29,7 @@ export function reqLoginOut() {
 export function getUserDetail(data: UidParams) {
 	return http.get('/user/detail', data)
 }
+// 获取我喜欢的音乐
+export function reqLikeList(data: UidParams) {
+	return http.get('/likelist', data)
+}
