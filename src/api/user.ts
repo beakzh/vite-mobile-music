@@ -1,5 +1,5 @@
 import http from '@/utils/http'
-import type { SendCodeParams, LoginPhoneParams, LoginEmailParams } from '@/types/api/user'
+import type { SendCodeParams, LoginPhoneParams, LoginEmailParams, UidParams } from '@/types/api/user'
 
 /* 
     用户登录信息模块
@@ -22,6 +22,10 @@ export function getUserInfo() {
 	return http.get('/user/account', {})
 }
 // 用户登出
-export function reqLoginOut () {
-    return http.get('/logout', {})
+export function reqLoginOut() {
+	return http.get('/logout', {})
+}
+// 获取用户详情
+export function getUserDetail(data: UidParams) {
+	return http.get('/user/detail', data)
 }
