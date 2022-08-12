@@ -1,5 +1,5 @@
 import http from '@/utils/http'
-import type { SendCodeParams, LoginPhoneParams, LoginEmailParams, UidParams } from '@/types/api/user'
+import type { SendCodeParams, LoginPhoneParams, LoginEmailParams, UidParams, UserPlayList } from '@/types/api/user'
 
 /* 
     用户登录信息模块
@@ -36,4 +36,8 @@ export function reqLikeList(data: UidParams) {
 // 获取用户信息 , 歌单，收藏，mv, dj 数量 /user/subcount
 export function reqUserSubCount () {
 	return http.get('/user/subcount', {})
+}
+// 获取用户歌单
+export function reqUserPlayList (data: UserPlayList) {
+	return http.get('/user/playlist', data)
 }

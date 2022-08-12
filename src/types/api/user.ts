@@ -17,3 +17,9 @@ export interface UidParams {
 	uid: number
 	timestamp?: number
 }
+// 用户歌单
+export interface UserPlayList {
+	uid: number
+	limit?: number
+	offset?: number
+}

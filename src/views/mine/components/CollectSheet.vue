@@ -13,7 +13,7 @@ const { userInfo } = storeToRefs(userStore)
 const total = ref<number>(0)
 let getCount = () => {
 	reqUserSubCount().then((res: any) => {
-		total.value = res.createdPlaylistCount
+		total.value = res.subPlaylistCount
 	})
 }
 getCount()
@@ -32,7 +32,7 @@ let getList = () => {
 	}
 	reqUserPlayList(params).then((res: any) => {
 		list.value = list.value?.concat(
-			res.playlist.filter((v: SheetDataInterface) => v.creator.userId == userInfo.value.userId)
+			res.playlist.filter((v: SheetDataInterface) => v.creator.userId != userInfo.value.userId)
 		)
 		finished.value = !res.more
 	})
@@ -46,7 +46,7 @@ let onLoad = () => {
 <template>
 	<div class="creat-sheet">
 		<div class="menu">
-			<div>创建歌单（{{ total }}）个</div>
+			<div>收藏歌单（{{ total }}）个</div>
 			<div class="flex_box_center_column">
 				<van-icon name="plus" />
 			</div>

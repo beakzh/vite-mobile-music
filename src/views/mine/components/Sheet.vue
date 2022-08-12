@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CreateSheet from './CreateSheet.vue'
+import CollectSheet from './CollectSheet.vue'
 import { ref } from 'vue'
 
 const active = ref<number>(0)
@@ -7,14 +8,16 @@ const active = ref<number>(0)
 
 <template>
 	<div class="sheet">
-		<van-tabs v-model:active="active" scrollspy sticky>
+		<van-tabs v-model:active="active" scrollspy sticky :offset-top="45">
 			<van-tab title="创建歌单">
 				<div class="box_white_container">
 					<CreateSheet />
 				</div>
 			</van-tab>
 			<van-tab title="收藏歌单">
-				<div class="box_white_container"></div>
+				<div class="box_white_container">
+                    <CollectSheet />
+                </div>
 			</van-tab>
 		</van-tabs>
 	</div>
