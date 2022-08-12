@@ -44,7 +44,7 @@ let onLoad = () => {
 </script>
 
 <template>
-	<div class="creat-sheet">
+	<div class="collect-sheet">
 		<div class="menu">
 			<div>收藏歌单（{{ total }}）个</div>
 			<div class="flex_box_center_column">
@@ -59,7 +59,7 @@ let onLoad = () => {
 </template>
 
 <style lang="less" scoped>
-.creat-sheet {
+.collect-sheet {
 	.menu {
 		display: flex;
 		justify-content: space-between;
