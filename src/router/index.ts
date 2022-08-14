@@ -54,6 +54,26 @@ const routes: Array<RouteRecordRaw> = [
 		name: 'EmailLogin',
 		component: _ => import('@/views/login/EmailLogin.vue'),
 	},
+	{
+		path: '/editSheet',
+		name: 'EditSheet',
+		component: _ => import('@/views/editSheet/index.vue'),
+	},
+	{
+		path: '/editName',
+		name: 'EditName',
+		component: _ => import('@/views/editSheet/EditName.vue'),
+	},
+	{
+		path: '/editTags',
+		name: 'EditTags',
+		component: _ => import('@/views/editSheet/EditTags.vue'),
+	},
+	{
+		path: '/editDesc',
+		name: 'EditDesc',
+		component: _ => import('@/views/editSheet/EditDesc.vue'),
+	},
 ]
 const router = createRouter({
 	history: createWebHistory(),

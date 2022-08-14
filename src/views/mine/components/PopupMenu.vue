@@ -37,9 +37,9 @@ let edit = () => {
 						<van-icon name="delete-o" @click="del" />
 					</template>
 				</van-cell>
-				<van-cell title="编辑" is-link v-if="!hideEdit">
+				<van-cell title="编辑" is-link v-if="!hideEdit" @click="edit">
 					<template #right-icon>
-						<van-icon name="edit" @click="edit" />
+						<van-icon name="edit" />
 					</template>
 				</van-cell>
 			</van-cell-group>

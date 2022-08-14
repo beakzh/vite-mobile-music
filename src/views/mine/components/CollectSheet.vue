@@ -6,7 +6,9 @@ import type { SheetDataInterface } from '@/types/public/sheet'
 import { reqUserPlayList } from '@/api/user'
 import SheetItem from './SheetItem.vue'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const userStore = useUserStore()
 const { userInfo } = storeToRefs(userStore)
 
@@ -49,6 +51,14 @@ let delSuccess = (id: number) => {
 	list.value.splice(index, 1)
 	total.value--
 }
+let goSheetDetail = (id: number) => {
+	router.push({
+		path: '/editSheet',
+		query: {
+			id,
+		},
+	})
+}
 
 let onLoad = () => {
 	offset++
@@ -74,6 +84,7 @@ onLoad()
 				:show-edit="true"
 				:hide-edit="true"
 				@del-success="delSuccess(v.id)"
+				@edit="goSheetDetail(v.id)"
 			/>
 		</van-list>
 	</div>
