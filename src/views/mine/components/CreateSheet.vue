@@ -30,16 +30,29 @@ let getList = () => {
 		offset: limit * offset,
 		time: Date.now(),
 	}
-	reqUserPlayList(params).then((res: any) => {
-		list.value = list.value?.concat(
-			res.playlist.filter((v: SheetDataInterface) => v.creator.userId == userInfo.value.userId)
-		)
-		finished.value = !res.more
-	})
+	loading.value = true
+	reqUserPlayList(params)
+		.then((res: any) => {
+			list.value = list.value?.concat(
+				res.playlist.filter(
+					(v: SheetDataInterface) => v.creator.userId == userInfo.value.userId
+				)
+			)
+			finished.value = !res.more
+		})
+		.finally(() => {
+			loading.value = false
+		})
 }
 let onLoad = () => {
 	offset++
 	getList()
+}
+
+let delSuccess = (id:number) => {
+	const index  = list.value.findIndex(v => v.id === id)
+	list.value.splice(index, 1)
+	total.value--
 }
 </script>
 
@@ -53,7 +66,14 @@ let onLoad = () => {
 		</div>
 
 		<van-list :loading="loading" :finished="finished" @load="onLoad">
-			<SheetItem v-for="v in list" :key="v.id" :sheet-data="v" />
+			<SheetItem
+				v-for="v in list"
+				:key="v.id"
+				:sheet-data="v"
+				:show-edit="true"
+				:hide-edit="false"
+				@del-success="delSuccess(v.id)"
+			/>
 		</van-list>
 	</div>
 </template>

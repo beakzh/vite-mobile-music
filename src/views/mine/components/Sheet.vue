@@ -8,7 +8,7 @@ const active = ref<number>(0)
 
 <template>
 	<div class="sheet">
-		<van-tabs v-model:active="active" scrollspy sticky :offset-top="45">
+		<van-tabs v-model:active="active" scrollspy sticky :lazy-render="false" :offset-top="45">
 			<van-tab title="创建歌单">
 				<div class="box_white_container">
 					<CreateSheet />
