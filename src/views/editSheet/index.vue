@@ -37,7 +37,6 @@ let afterRead = (file: any) => {
 }
 let getDetail = () => {
 	reqSheetDetail({ id: Number(id), time: Date.now() }).then((res: any) => {
-		console.log(res)
 		details.coverImgUrl = res.playlist.coverImgUrl
 		details.name = res.playlist.name
 		details.description = res.playlist.description

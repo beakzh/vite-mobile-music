@@ -1,5 +1,11 @@
 import http from '@/utils/http'
-import type { delParams, UpdateCoverParams, UpdateNameParams, UpdateDescParams } from '@/types/api/sheet'
+import type {
+	delParams,
+	UpdateCoverParams,
+	UpdateNameParams,
+	UpdateDescParams,
+	UpdateTagsParams,
+} from '@/types/api/sheet'
 
 // 歌单分类
 export function reqCatList() {
@@ -20,6 +26,10 @@ export function reqUpdateCover(data: FormData, config: any) {
 // 更新歌单名称
 export function reqUpdateSheetName(data: UpdateNameParams) {
 	return http.get('/playlist/name/update', data)
+}
+// 更新歌单标签
+export function reqUpdateSheetTags(data: UpdateTagsParams) {
+	return http.get('/playlist/tags/update', data)
 }
 // 更新歌单描述
 export function reqUpdateSheetDesc(data: UpdateDescParams) {

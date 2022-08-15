@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { goBack } from '@/utils/back'
-import { reqCatList } from '@/api/sheet'
+import { reqCatList, reqUpdateSheetTags } from '@/api/sheet'
+import { reqSheetDetail } from '@/api/song'
 import { useRouter, useRoute } from 'vue-router'
 import { ref } from 'vue'
+import { Toast } from 'vant'
 
 const route = useRoute()
 const router = useRouter()
@@ -17,12 +19,33 @@ interface Parent {
 	category: string
 }
 
-const selectList = ref<Tag[]>([])
+const selectList = ref<string[]>([])
 const parent = ref<Parent[]>([])
-let handleSave = () => {}
+let handleSave = () => {
+	const loading = Toast.loading({
+		duration: 0,
+		message: '加载中...',
+		overlay: true,
+	})
+	reqUpdateSheetTags({ id: Number(route.query.id), tags: selectList.value.join(';') })
+		.then(() => {
+			router.back()
+		})
+		.finally(() => {
+			loading.clear()
+		})
+}
+let selectTag = (tag: Tag) => {
+	const index = selectList.value.findIndex(v => v == tag.name)
+	if (index > -1) {
+		selectList.value.splice(index, 1)
+	} else {
+		if (selectList.value.length >= 3) return Toast.fail('最多选择三个标签')
+		selectList.value.push(tag.name)
+	}
+}
 let getCatList = () => {
 	reqCatList().then((res: any) => {
-		console.log(res)
 		const categories = Object.values(res.categories)
 		parent.value = categories.map((v, i) => ({
 			category: String(i),
@@ -30,7 +53,6 @@ let getCatList = () => {
 			children: res.sub.filter((u: Tag): boolean => u.category == String(i)),
 			icon: getIcon(String(i)),
 		}))
-		console.log(parent.value)
 	})
 }
 let getIcon = (category: string) => {
@@ -49,6 +71,12 @@ let getIcon = (category: string) => {
 			return 'icon-diqiu'
 	}
 }
+let getDetail = () => {
+	reqSheetDetail({ id: Number(route.query.id), timestamp: Date.now() }).then((res: any) => {
+		selectList.value = res.playlist.tags || []
+	})
+}
+getDetail()
 getCatList()
 </script>
 
@@ -76,8 +104,11 @@ getCatList()
 				</div>
 				<div class="txt">{{ v.name }}</div>
 			</div>
-			<div class="children-name" v-for="(u, j) in v.children" :key="j">
+			<div class="children-name" v-for="(u, j) in v.children" :key="j" @click="selectTag(u)">
 				<div class="txt-name">{{ u.name }}</div>
+				<div class="child-check" v-if="selectList.includes(u.name)">
+					<i class="iconfont icon-gou"></i>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -103,7 +134,7 @@ getCatList()
 		margin-bottom: 60px;
 		.parent-name {
 			font-size: 22px;
-			grid-area: 1 / auto/ 3/ auto;
+			grid-area: 1 / auto/ 3 / auto;
 			text-align: center;
 			border-right: 1px solid var(--my-gray-1);
 			border-bottom: 1px solid var(--my-gray-1);
@@ -128,11 +159,18 @@ getCatList()
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
+			position: relative;
 			.txt-name {
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
 				line-height: 80px;
+			}
+			.child-check {
+				position: absolute;
+				top: 1px;
+				left: 5px;
+				color: var(--my-primary-color);
 			}
 		}
 	}

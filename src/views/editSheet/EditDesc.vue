@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reqUpdateSheetDesc } from '@/api/sheet'
+import { reqSheetDetail } from '@/api/song'
 import { goBack } from '@/utils/back'
 import { Toast } from 'vant'
 import { ref } from 'vue'
@@ -23,6 +24,12 @@ let onClickRight = () => {
 			loading.clear()
 		})
 }
+let getDetail = () => {
+	reqSheetDetail({ id: Number(route.query.id), timestamp: Date.now() }).then((res: any) => {
+		desc.value = res.playlist.description
+	})
+}
+getDetail()
 </script>
 
 <template>
