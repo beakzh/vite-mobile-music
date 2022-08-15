@@ -10,6 +10,6 @@ interface updateParams {
 	params: UpdateCoverParams
 	data: FormData
 }
-export function reqUpdateCover(data: updateParams) {
-	return http.post('/playlist/cover/update', data)
+export function reqUpdateCover(data: FormData, config: any) {
+	return http.post('/playlist/cover/update', data, { params: config.params })
 }

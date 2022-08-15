@@ -96,7 +96,7 @@ request.interceptors.response.use(
 interface Http {
 	get<T>(url: string, params: unknown): Promise<T>
 
-	post<T>(url: string, params: unknown): Promise<T>
+	post<T>(url: string, data: unknown, config?: any): Promise<T>
 
 	put<T>(url: string, params: unknown): Promise<T>
 
@@ -113,10 +113,10 @@ const http: Http = {
 		})
 	},
 
-	post(url, params) {
+	post(url, data, config) {
 		return new Promise((resolve, reject) => {
 			request
-				.post(url, JSON.stringify(params))
+				.post(url, JSON.stringify(data), config)
 				.then(res => resolve(res.data))
 				.catch(err => reject(err))
 		})

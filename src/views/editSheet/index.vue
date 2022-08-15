@@ -27,7 +27,7 @@ let afterRead = (file: any) => {
 		message: '加载中...',
 		overlay: true,
 	})
-	reqUpdateCover({ params, data: formData })
+	reqUpdateCover(formData, { params })
 		.then((res: any) => {
 			details.coverImgUrl = res.data.url
 		})
