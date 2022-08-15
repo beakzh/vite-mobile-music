@@ -31,8 +31,8 @@ let edit = () => {
 <template>
 	<van-popup v-model:show="show" round position="bottom">
 		<div class="content">
-			<van-cell-group>
-				<van-cell title="删除"  is-link>
+			<van-cell-group :border="false">
+				<van-cell title="删除" is-link>
 					<template #right-icon>
 						<van-icon name="delete-o" @click="del" />
 					</template>

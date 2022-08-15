@@ -94,11 +94,24 @@ let toEditDesc = () => {
 						</van-uploader>
 					</template>
 				</van-field>
-				<van-field label="名称" :model-value="details.name" readonly @click="toEditName" />
-				<van-field label="标签" :model-value="details.tags" readonly @click="toEditTags" />
+				<van-field
+					label="名称"
+					:model-value="details.name"
+					placeholder="请输入名称"
+					readonly
+					@click="toEditName"
+				/>
+				<van-field
+					label="标签"
+					:model-value="details.tags"
+					placeholder="请选择标签"
+					readonly
+					@click="toEditTags"
+				/>
 				<van-field
 					label="描述"
 					:model-value="details.description"
+					placeholder="请输入描述"
 					readonly
 					@click="toEditDesc"
 				/>
