@@ -7,7 +7,7 @@ import { ref } from 'vue'
 
 let show = ref<boolean>(false)
 let swipe = ref<SwipeCellInstance>()
-$bus.on('openMenu', ():void => {
+$bus.on('openMenu', (): void => {
 	swipe.value?.open('left')
 })
 </script>

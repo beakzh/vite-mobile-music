@@ -1,3 +1,5 @@
+import { arData, alData } from '@/types/store/player'
+
 // 推荐歌单数据
 export interface songListFace {
 	alg: string
@@ -29,5 +31,13 @@ export interface songData {
 // 盒子类型
 export enum BoxType {
 	line = 'line',
-	box = 'box'
+	box = 'box',
+}
+// 歌单广场列表歌曲
+export interface songInterface {
+	id: number
+	name: string
+	artists: Array<arData>
+	album: alData
+	duration: number
 }
