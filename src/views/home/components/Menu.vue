@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const menuList = ref([
 	{
 		name: '每日推荐',
@@ -35,14 +37,17 @@ const menuList = ref([
 ])
 
 let scroll = (e: Event): void => {
-    e.stopPropagation()
+	e.stopPropagation()
+}
+let goPath = (path: string): void => {
+	router.push(path)
 }
 </script>
 
 <template>
 	<div class="menu-wrapper" @touchmove="scroll">
 		<div class="menu-list">
-			<div class="menu-item" v-for="(v, i) in menuList" :key="i">
+			<div class="menu-item" v-for="(v, i) in menuList" :key="i" @click="goPath(v.path)">
 				<div class="icon-wrapper flex_box_center_column">
 					<i class="iconfont" :class="v.icon"></i>
 				</div>

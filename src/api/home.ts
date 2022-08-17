@@ -18,5 +18,9 @@ export function getRecommendNewSongs(data: RecommendListParams) {
 }
 // 获取最新mv
 export function getNewMvList(data: RecommendListParams) {
-    return http.get('/mv/first', data)
+	return http.get('/mv/first', data)
+}
+// 每日推荐歌曲
+export function reqDaysRecommend() {
+	return http.get('/recommend/songs', {})
 }

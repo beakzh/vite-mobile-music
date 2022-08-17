@@ -7,7 +7,7 @@
 	--my-color-oranger: #ff7a38;
 	--my-gray-1: #e8e8e8;
 	--my-text-color-white: #fff;
-	--my-primary-color: #e20001
+	--my-primary-color: #e20001;
 }
 html {
 	font-size: 10vw;
@@ -36,10 +36,10 @@ html {
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 }
-.box_white_container{
+.box_white_container {
 	background: var(--my-back-color-white);
 	border-radius: 20px;
 	padding: 20px;
 	margin-bottom: 30px;
-	box-shadow: 0 0 20px 0 rgba(136,137,140,.33);
+	box-shadow: 0 0 20px 0 rgba(136, 137, 140, 0.33);
 }

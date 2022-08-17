@@ -34,6 +34,12 @@ const routes: Array<RouteRecordRaw> = [
 			},
 		],
 	},
+	// 每日推荐
+	{
+		path: '/daysRecommend',
+		name: 'DayRecommend',
+		component: _ => import('@/views/daysRecommend/index.vue'),
+	},
 	{
 		path: '/login',
 		name: 'Login',

@@ -31,8 +31,8 @@ const singer = computed(() => (props.songData.ar ? props.songData.ar.map(v => v.
 			<img :src="songData.al?.picUrl + '?param=140y140'" alt="" />
 		</div>
 		<div class="center">
-			<div class="song-name">{{ songData.name }}</div>
-			<div class="singer">{{ singer }}</div>
+			<div class="song-name text_over_line">{{ songData.name }}</div>
+			<div class="singer text_over_line">{{ singer }}</div>
 		</div>
 		<div class="right">
 			<i class="iconfont icon-24gf-play"></i>
@@ -57,19 +57,15 @@ const singer = computed(() => (props.songData.ar ? props.songData.ar.map(v => v.
 	.center {
 		flex: 1;
 		margin-left: 10px;
+        min-width: 0;
+        overflow: hidden;
 		.song-name {
 			font-size: 26px;
 			color: var(--my-text-color-black);
-			text-overflow: ellipsis;
-			overflow: hidden;
-			white-space: nowrap;
 		}
 		.singer {
 			color: var(--my-text-color-gray);
 			font-size: 24px;
-			text-overflow: ellipsis;
-			overflow: hidden;
-			white-space: nowrap;
 		}
 	}
     .right {
