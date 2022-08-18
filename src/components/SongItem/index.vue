@@ -46,6 +46,7 @@ const singer = computed(() => (props.songData.ar ? props.songData.ar.map(v => v.
 	display: flex;
 	border-bottom: 1px solid var(--van-cell-border-color);
 	align-items: center;
+    overflow: hidden;
 	.left {
 		img {
 			width: 80px;

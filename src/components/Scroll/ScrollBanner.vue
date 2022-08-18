@@ -48,8 +48,14 @@ onMounted(() => {
 nextTick(() => {
 	bs && bs.refresh()
 })
+function refresh() {
+	bs && bs.refresh.apply(bs, arguments)
+}
 watch(scrollY, val => {
 	console.log(val)
+})
+defineExpose({
+	refresh,
 })
 </script>
 
@@ -78,9 +84,39 @@ watch(scrollY, val => {
 	flex-direction: column;
 	overflow: hidden;
 	background-color: var(--my-back-color-white);
-    .img-wrapper {
-        width: 100%;
-        height: 400px;
-    }
+}
+.scroll-wrapper {
+	flex: 1;
+	height: 100%;
+	overflow: hidden;
+	background-color: var(--my-back-color-white);
+	.scroll-content {
+		background-color: var(--my-back-color-white);
+		min-height: 100%;
+		padding-bottom: 100px;
+	}
+}
+.img-wrapper {
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	position: absolute;
+	.cover-img {
+		width: 100%;
+		height: 400px;
+		min-height: 100px;
+		object-fit: cover;
+	}
+	.btn {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+.layer {
+	height: 400px;
+	background-color: var(--my-back-color-white);
 }
 </style>
