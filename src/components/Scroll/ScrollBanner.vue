@@ -60,16 +60,16 @@ defineExpose({
 </script>
 
 <template>
-	<div class="scroll-view">
-		<div class="img-wrapper" :style="wrapperStyle">
-			<img class="cover-img" :src="imgUrl" alt="" ref="banner" :style="imgStyle" />
+	<div class="scrollView">
+		<div class="img_wrapper" :style="wrapperStyle">
+			<img class="cover_img" :src="imgUrl" :style="imgStyle" ref="banner" />
 			<div class="btn">
 				<slot name="btn"></slot>
 			</div>
 		</div>
-		<div class="layer" :style="layerStyle"></div>
-		<div class="scroll-wrapper" ref="wrapper">
-			<div class="scroll-content">
+		<div class="layer" ref="layer" :style="layerStyle"></div>
+		<div class="scroll_wrapper" ref="wrapper">
+			<div class="scroll_content">
 				<div class="seize" :style="seizeStyle"></div>
 				<slot></slot>
 			</div>
@@ -78,30 +78,33 @@ defineExpose({
 </template>
 
 <style lang="less" scoped>
-.scroll-view {
+.scrollView {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
 	background-color: var(--my-back-color-white);
 }
-.scroll-wrapper {
-	flex: 1;
+
+.scroll_wrapper {
 	height: 100%;
 	overflow: hidden;
+	flex: 1;
 	background-color: var(--my-back-color-white);
-	.scroll-content {
+	.scroll_content {
+		padding-bottom: 100px;
 		background-color: var(--my-back-color-white);
 		min-height: 100%;
-		padding-bottom: 100px;
 	}
 }
-.img-wrapper {
+
+.img_wrapper {
 	width: 100%;
-	height: 400px;
 	overflow: hidden;
+	height: 400px;
 	position: absolute;
-	.cover-img {
+
+	.cover_img {
 		width: 100%;
 		height: 400px;
 		min-height: 100px;
@@ -115,6 +118,7 @@ defineExpose({
 		height: 100%;
 	}
 }
+
 .layer {
 	height: 400px;
 	background-color: var(--my-back-color-white);

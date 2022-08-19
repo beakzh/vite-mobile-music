@@ -59,18 +59,19 @@ getList()
 	height: 100%;
 	.scroll {
 		height: 100%;
-		.list {
-			padding: 30px;
-			background-color: var(--my-back-color-white);
-		}
-		.btn-wrapper {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+	}
+	.list {
+		padding: 30px;
+		background-color: var(--my-back-color-white);
+	}
+	.btn-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
+
 :deep(.van-nav-bar .van-icon) {
 	color: unset;
 }
