@@ -40,6 +40,12 @@ const routes: Array<RouteRecordRaw> = [
 		name: 'DayRecommend',
 		component: _ => import('@/views/daysRecommend/index.vue'),
 	},
+	// 历史推荐
+	{
+		path:'/daysRecommendHistroy',
+		name: 'DaysRecommendHistroy',
+		component: _=> import('@/views/daysRecommend/history.vue')
+	},
 	{
 		path: '/login',
 		name: 'Login',

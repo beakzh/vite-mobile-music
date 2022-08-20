@@ -5,10 +5,15 @@ import { goBack } from '@/utils/back'
 import { reqDaysRecommend } from '@/api/home'
 import type { SongData } from '@/types/store/player'
 import { Toast } from 'vant'
+import { useRouter } from 'vue-router'
 import { ref, nextTick } from 'vue'
 
+const router = useRouter()
 const list = ref<SongData[]>()
 const scroll = ref<InstanceType<typeof ScrollBanner>>()
+let goHistory = () => {
+	router.push('/daysRecommendHistroy')
+}
 let getList = () => {
 	const loading = Toast.loading({
 		message: '加载中...',
@@ -35,6 +40,7 @@ getList()
 			placeholder
 			right-text="历史日推"
 			@click-left="goBack"
+			@click-right="goHistory"
 		/>
 		<div class="scroll">
 			<ScrollBanner ref="scroll">
@@ -56,7 +62,7 @@ getList()
 
 <style lang="less" scoped>
 .daysRecommend {
-	height: 100%;
+	height: 100vh;
 	.scroll {
 		height: 100%;
 	}
@@ -69,6 +75,9 @@ getList()
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		.iconfont {
+			font-size: 30px;
+		}
 	}
 }
 

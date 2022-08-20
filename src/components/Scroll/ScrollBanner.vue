@@ -51,8 +51,42 @@ nextTick(() => {
 function refresh() {
 	bs && bs.refresh.apply(bs, arguments)
 }
-watch(scrollY, val => {
-	console.log(val)
+watch(scrollY, (val: any) => {
+	if (val >= 0) {
+		imgStyle.value = {
+			height: originalHeight + val + 'px',
+		}
+		wrapperStyle.value = {
+			height: originalHeight + val + 'px',
+		}
+	} else {
+		imgStyle.value = {
+			height: originalHeight + val + 'px',
+		}
+		wrapperStyle.value = {
+			height: originalHeight + val + 'px',
+		}
+		layerStyle.value = {
+			height: originalHeight + val + 'px',
+		}
+		seizeStyle.value = {
+			height: Math.abs(val) + 'px',
+		}
+		if (Math.abs(val) > originalHeight) {
+			imgStyle.value = {
+				height: 0 + 'px',
+			}
+			wrapperStyle.value = {
+				height: 0 + 'px',
+			}
+			layerStyle.value = {
+				height: 0 + 'px',
+			}
+			seizeStyle.value = {
+				height: originalHeight + 'px'
+			}
+		}
+	}
 })
 defineExpose({
 	refresh,

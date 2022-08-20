@@ -1,5 +1,5 @@
 import http from '@/utils/http'
-import type { RecommendListParams } from '@/types/api/home'
+import type { RecommendListParams, HistoryRecommendParams } from '@/types/api/home'
 
 /*
     首页
@@ -24,3 +24,12 @@ export function getNewMvList(data: RecommendListParams) {
 export function reqDaysRecommend() {
 	return http.get('/recommend/songs', {})
 }
+// 获取可用推荐日期
+export function reqGetRecommendDate() {
+	return http.get('/history/recommend/songs', {})
+}
+// 获取历史日推可用日期列表  
+export function reqHistoryRecommend(data:HistoryRecommendParams) {
+		return http.get('/history/recommend/songs/detail', data)
+}
+ 
