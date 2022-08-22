@@ -47,7 +47,7 @@ let edit = () => {
 	<div class="sheet-item">
 		<div class="left">
 			<div class="cover">
-				<img class="cover-img" :src="sheetData.coverImgUrl" alt="" />
+				<img class="cover-img" :src="sheetData.coverImgUrl + '?param=100y100'" alt="" />
 			</div>
 			<div class="info">
 				<div class="name">{{ sheetData.name }}</div>

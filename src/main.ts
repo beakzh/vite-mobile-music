@@ -8,5 +8,6 @@ import 'vant/lib/index.css';
 import '@/assets/iconfont/iconfont.css'
 import './permission'
 import 'lib-flexible/flexible'
+import { Lazyload } from 'vant'
 
-createApp(App).use(router).use(createPinia()).use(Vant).mount('#app')
+createApp(App).use(router).use(createPinia()).use(Vant).use(Lazyload).mount('#app')

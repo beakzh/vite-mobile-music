@@ -41,3 +41,12 @@ export interface songInterface {
 	album: alData
 	duration: number
 }
+// 歌单广场歌单
+export interface SheetDataFace {
+	coverImgUrl: string
+	tags: Array<string>
+	updateTime: number
+	name: string
+	playCount: number
+	id: number
+}

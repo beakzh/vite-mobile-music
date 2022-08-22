@@ -47,6 +47,11 @@ const routes: Array<RouteRecordRaw> = [
 		component: _=> import('@/views/daysRecommend/history.vue')
 	},
 	{
+		path: '/sheetSquare',
+		name: 'SheetSquare',
+		component: _=> import('@/views/sheetSquare/index.vue')
+	},
+	{
 		path: '/login',
 		name: 'Login',
 		component: _ => import('@/views/login/Login.vue'),

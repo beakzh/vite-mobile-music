@@ -28,7 +28,7 @@ const singer = computed(() => (props.songData.ar ? props.songData.ar.map(v => v.
 <template>
 	<div class="song-item">
 		<div class="left">
-			<img :src="songData.al?.picUrl + '?param=140y140'" alt="" />
+			<img :src="songData.al?.picUrl + '?param=140y140'" alt=""  v-lazy="songData.al.picUrl + '?param=140y140'" />
 		</div>
 		<div class="center">
 			<div class="song-name text_over_line">{{ songData.name }}</div>
