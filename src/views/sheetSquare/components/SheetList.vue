@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { reqSheetList } from '@/api/song'
 import type { SheetDataFace } from '@/types/public'
+import SheetItem from './SheetItem.vue'
 
 interface Prop {
 	cat: string
@@ -21,7 +22,7 @@ function getList() {
 		cat: props.cat,
 		before: updateTime,
 	}
-    loading.value = true
+	loading.value = true
 	reqSheetList(params)
 		.then((res: any) => {
 			list.value = list.value.concat(res.playlists)
@@ -36,7 +37,12 @@ function getList() {
 		})
 }
 
-let onRefresh = () => {}
+let onRefresh = () => {
+	list.value = []
+	updateTime = 0
+	total = 0
+	getList()
+}
 let onLoad = () => {
 	getList()
 }
@@ -51,7 +57,9 @@ let onLoad = () => {
 			@load="onLoad"
 		>
 			<van-row>
-				<van-col span="8"> </van-col>
+				<van-col span="8" v-for="v in list" :key="v.id">
+					<SheetItem :sheet-data="v" />
+				</van-col>
 			</van-row>
 		</van-list>
 	</van-pull-refresh>

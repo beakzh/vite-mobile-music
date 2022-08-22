@@ -21,7 +21,7 @@ getSheetTags()
 <template>
 	<div class="sheet-squre">
 		<van-nav-bar title="歌单广场" left-arrow fixed placeholder @click-left="goBack" />
-		<van-tabs v-model:active="active" sticky offset-top="1.22667rem">
+		<van-tabs v-model:active="active" sticky offset-top="1.2rem">
 			<van-tab v-for="v in tags" :title="v.name" :key="v.id">
                 <SheetList :cat="v.name" />
             </van-tab>
