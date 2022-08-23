@@ -42,14 +42,27 @@ const routes: Array<RouteRecordRaw> = [
 	},
 	// 历史推荐
 	{
-		path:'/daysRecommendHistroy',
+		path: '/daysRecommendHistroy',
 		name: 'DaysRecommendHistroy',
-		component: _=> import('@/views/daysRecommend/history.vue')
+		component: _ => import('@/views/daysRecommend/history.vue'),
 	},
+	// 歌单广场
 	{
 		path: '/sheetSquare',
 		name: 'SheetSquare',
-		component: _=> import('@/views/sheetSquare/index.vue')
+		component: _ => import('@/views/sheetSquare/index.vue'),
+	},
+	// 排行榜
+	{
+		path: '/topList',
+		name: 'TopList',
+		component: _ => import('@/views/topList/index.vue'),
+	},
+	// 歌手
+	{
+		path: '/singer',
+		name: 'Singer',
+		component: _ => import('@/views/singer/index.vue'),
 	},
 	{
 		path: '/login',
