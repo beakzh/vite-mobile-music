@@ -31,7 +31,7 @@ defineExpose({
 
 <style lang="less" scoped>
 .swiper {
-	padding: 10px;
+	padding: 20px;
 	background-image: linear-gradient(#e8e9eb, #fff);
 	.my-swipe {
 		.swiper-img {
