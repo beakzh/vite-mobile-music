@@ -52,12 +52,12 @@ let tapMenu = (type: string) => {
 	align-items: center;
 	padding: 10px;
 	.left {
-		display: flex;
-		align-items: center;
 		padding-left: 15px;
 		margin-bottom: 10px;
 		font-size: 36px;
 		color: var(--my-text-color-black);
+		display: flex;
+		align-items: center;
 		font-weight: bold;
 	}
 	.menu {
