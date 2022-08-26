@@ -2,13 +2,17 @@
 import { goBack } from '@/utils/back'
 import Bannner from '@/views/home/components/Swiper.vue'
 import NewAlbum from './components/NewAlbum.vue'
+import DigitAlbum from './components/DigitAlbum.vue'
+import SingleDigit from './components/SingleDigit.vue'
 </script>
 
 <template>
 	<div class="album">
 		<van-nav-bar title="数字专辑" left-arrow fixed placeholder @click-left="goBack" />
 		<Bannner />
-        <NewAlbum />
+		<NewAlbum />
+		<DigitAlbum />
+		<SingleDigit />
 	</div>
 </template>
 
