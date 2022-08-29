@@ -54,12 +54,7 @@ let onRefresh = () => {
 		</van-dropdown-menu>
 
 		<van-pull-refresh v-model="pushLoading" @refresh="onRefresh">
-			<van-list
-				v-model:loading="loading"
-				:finished="finished"
-				finished-text="没有更多了~"
-				@load="onLoad"
-			>
+			<van-list v-model:loading="loading" :finished="finished" finished-text="没有更多了~" @load="onLoad">
 				<SingerItem v-for="v in list" :key="v.id" :singer-data="v" />
 			</van-list>
 		</van-pull-refresh>

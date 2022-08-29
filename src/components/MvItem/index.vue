@@ -31,21 +31,26 @@ const props = withDefaults(defineProps<Prop>(), {
 <style lang="less" scoped>
 .mv-item {
 	padding: 20px;
+
 	.wrapper {
 		display: flex;
 		align-items: center;
 		gap: 0 20px;
+
 		.wrapper-img {
 			width: 100px;
 			height: 100px;
 			border-radius: 10px;
 		}
+
 		.wrapper-title {
 			display: flex;
 			flex-direction: column;
+
 			.song-name {
 				font-size: 30px;
 			}
+
 			.singer {
 				font-size: 25px;
 				color: var(--my-text-color-gray);

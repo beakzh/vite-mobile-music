@@ -68,6 +68,7 @@ getSearchDefault()
 	height: 100vh;
 	overflow-y: scroll;
 	padding-bottom: 200px;
+
 	.header {
 		padding: 0 0.2rem;
 		height: 1.1rem;
@@ -75,11 +76,13 @@ getSearchDefault()
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 		.iconfont {
 			font-size: 0.5rem;
 			font-weight: bold;
 			color: var(--my-text-color-black);
 		}
+
 		.search-wrapper {
 			background-color: #fff;
 			height: 0.7rem;
@@ -89,10 +92,12 @@ getSearchDefault()
 			display: flex;
 			align-items: center;
 			justify-content: center;
+
 			.iconfont {
 				font-size: 0.4rem;
 				color: var(--my-text-color-black);
 			}
+
 			.search-text {
 				margin-left: 0.1rem;
 				font-size: 0.35rem;
@@ -100,8 +105,10 @@ getSearchDefault()
 			}
 		}
 	}
+
 	.content {
 		padding: 0 0.3rem;
+
 		.line {
 			background: var(--van-gray-3);
 			height: 2px;

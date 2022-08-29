@@ -33,15 +33,8 @@ getList()
 
 <template>
 	<div class="daysRecommend">
-		<van-nav-bar
-			title="每日推荐"
-			left-arrow
-			fixed
-			placeholder
-			right-text="历史日推"
-			@click-left="goBack"
-			@click-right="goHistory"
-		/>
+		<van-nav-bar title="每日推荐" left-arrow fixed placeholder right-text="历史日推" @click-left="goBack"
+			@click-right="goHistory" />
 		<div class="scroll">
 			<ScrollBanner ref="scroll">
 				<template #btn>
@@ -63,18 +56,22 @@ getList()
 <style lang="less" scoped>
 .daysRecommend {
 	height: 100vh;
+
 	.scroll {
 		height: 100%;
 	}
+
 	.list {
 		padding: 30px;
 		background-color: var(--my-back-color-white);
 	}
+
 	.btn-wrapper {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+
 		.iconfont {
 			font-size: 30px;
 		}

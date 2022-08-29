@@ -42,9 +42,9 @@ const navStyle = reactive({
 })
 let scroll = () => {
 	const top = mine.value?.scrollTop || 0
-	if(top < 50) navStyle.background = 'transparent'
+	if (top < 50) navStyle.background = 'transparent'
 	else navStyle.background = 'var(--my-back-color-white)'
-	
+
 }
 
 let openMenu = () => $bus.emit('openMenu')
@@ -110,6 +110,7 @@ let openMenu = () => $bus.emit('openMenu')
 	box-sizing: border-box;
 	overflow: auto;
 	padding-bottom: 100px;
+
 	.nav {
 		background: transparent;
 		display: flex;
@@ -118,28 +119,34 @@ let openMenu = () => $bus.emit('openMenu')
 		height: 88px;
 		box-sizing: border-box;
 		padding: 10px 20px;
+
 		.center {
 			font-size: 23px;
 		}
+
 		.iconfont {
 			font-size: 0.5rem;
 			font-weight: bold;
 			color: var(--my-text-color-black);
 		}
 	}
+
 	.mine-content {
 		padding: 20px;
 		min-height: 80vh;
+
 		.unlogin {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			min-height: 60vh;
+
 			.login-link {
 				display: block;
 				width: 100%;
 			}
 		}
+
 		.user-info {
 			display: flex;
 			flex-direction: column;
@@ -147,6 +154,7 @@ let openMenu = () => $bus.emit('openMenu')
 			align-items: center;
 			margin: 20px 0;
 			gap: 12px 0;
+
 			.user-img {
 				img {
 					margin-top: -70px;
@@ -155,24 +163,29 @@ let openMenu = () => $bus.emit('openMenu')
 					border-radius: 50%;
 				}
 			}
+
 			.user-name {
 				font-size: 28px;
 				font-weight: bold;
 				color: var(--my-text-color-black);
 			}
+
 			.user-other {
 				display: flex;
 				align-items: center;
 				color: var(--my-text-color-gray);
 				font-size: 24px;
+
 				.user-other-item {
 					position: relative;
 					padding: 0 20px;
+
 					&:last-child {
 						&:after {
 							display: none;
 						}
 					}
+
 					&:after {
 						content: '';
 						display: block;
@@ -186,21 +199,26 @@ let openMenu = () => $bus.emit('openMenu')
 				}
 			}
 		}
+
 		.app-box {
 			padding: 10px;
+
 			:deep(.van-col) {
 				margin: 20px 0;
 			}
+
 			.icon {
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				margin-bottom: 10px;
+
 				.iconfont {
 					font-size: 40px;
 					color: var(--my-primary-color);
 				}
 			}
+
 			.app-name {
 				font-size: 23px;
 				text-align: center;

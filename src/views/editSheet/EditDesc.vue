@@ -34,27 +34,12 @@ getDetail()
 
 <template>
 	<div class="edit-desc">
-		<van-nav-bar
-			title="编辑描述"
-			right-text="保存"
-			left-arrow
-			fixed
-			placeholder
-			@click-left="goBack"
-			@click-right="onClickRight"
-		/>
+		<van-nav-bar title="编辑描述" right-text="保存" left-arrow fixed placeholder @click-left="goBack"
+			@click-right="onClickRight" />
 		<van-form input-align="right">
 			<van-cell-group>
-				<van-field
-					v-model="desc"
-					:autosize="{ maxHeight: 600, minHeight: 300 }"
-					type="textarea"
-					label="描述"
-					maxlength="2000"
-					:row="10"
-					:show-word-limit="true"
-					placeholder="请输入歌单描述"
-				/>
+				<van-field v-model="desc" :autosize="{ maxHeight: 600, minHeight: 300 }" type="textarea" label="描述"
+					maxlength="2000" :row="10" :show-word-limit="true" placeholder="请输入歌单描述" />
 			</van-cell-group>
 		</van-form>
 	</div>
@@ -67,6 +52,7 @@ getDetail()
 	box-sizing: border-box;
 	padding: 15px;
 }
+
 :deep(.van-nav-bar .van-icon) {
 	color: unset;
 }

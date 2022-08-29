@@ -64,6 +64,7 @@ const routes: Array<RouteRecordRaw> = [
 		name: 'Singer',
 		component: _ => import('@/views/singer/index.vue'),
 	},
+	// 专辑
 	{
 		path: '/album',
 		name: 'Album',

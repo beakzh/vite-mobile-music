@@ -125,6 +125,7 @@ defineExpose({
 	overflow: hidden;
 	flex: 1;
 	background-color: var(--my-back-color-white);
+
 	.scroll_content {
 		padding-bottom: 100px;
 		background-color: var(--my-back-color-white);
@@ -144,6 +145,7 @@ defineExpose({
 		min-height: 100px;
 		object-fit: cover;
 	}
+
 	.btn {
 		position: absolute;
 		top: 0;

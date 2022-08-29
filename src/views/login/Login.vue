@@ -30,6 +30,7 @@ let emailLogin = (): void => {
 :deep(.van-nav-bar .van-icon) {
 	color: unset;
 }
+
 .login {
 	margin-top: 2rem;
 	display: flex;
@@ -37,16 +38,19 @@ let emailLogin = (): void => {
 	justify-content: center;
 	align-items: center;
 }
+
 .logo img {
 	width: 2.66667rem;
 	border-radius: 0.13333rem;
 }
+
 .btn-wrapper {
 	display: flex;
 	flex-direction: column;
 	margin-top: 0.5rem;
 	gap: 0.5rem 0;
 }
+
 :deep(.van-button) {
 	width: 8rem;
 }

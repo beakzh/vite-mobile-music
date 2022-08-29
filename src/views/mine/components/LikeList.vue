@@ -50,19 +50,23 @@ getLikeList()
 .like-list {
 	display: flex;
 	justify-content: space-between;
+
 	.left {
 		display: flex;
 		align-items: center;
+
 		.cover {
 			width: 100px;
 			height: 100px;
 			position: relative;
 			margin-right: 10px;
+
 			img {
 				width: 100%;
 				height: 100%;
 				border-radius: 10px;
 			}
+
 			.mask {
 				position: absolute;
 				top: 0;
@@ -72,24 +76,28 @@ getLikeList()
 				z-index: 1;
 				border-radius: 10px;
 				background: rgba(0, 0, 0, 0.3);
+
 				.iconfont {
 					color: var(--my-text-color-white);
 				}
 			}
 		}
+
 		.title {
 			font-size: 28px;
 		}
+
 		.total {
 			font-size: 23px;
 			color: var(--my-text-color-gray);
 		}
 	}
-    .play-btn {
-        .iconfont {
-            font-size: 25px;
-            margin-right: 10px;
-        }
-    }
+
+	.play-btn {
+		.iconfont {
+			font-size: 25px;
+			margin-right: 10px;
+		}
+	}
 }
 </style>

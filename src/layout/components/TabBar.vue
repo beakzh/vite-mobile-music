@@ -56,8 +56,9 @@ const menuList = reactive([
 	z-index: 1;
 	transition: all 0.4s ease;
 }
-	.iconfont{
-		font-size: 30px;
-		font-weight: 600;
-	}
+
+.iconfont {
+	font-size: 30px;
+	font-weight: 600;
+}
 </style>

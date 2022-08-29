@@ -27,15 +27,8 @@ let onClickRight = () => {
 
 <template>
 	<div class="edit-name">
-		<van-nav-bar
-			title="编辑名称"
-			right-text="保存"
-			left-arrow
-			fixed
-			placeholder
-			@click-left="goBack"
-			@click-right="onClickRight"
-		/>
+		<van-nav-bar title="编辑名称" right-text="保存" left-arrow fixed placeholder @click-left="goBack"
+			@click-right="onClickRight" />
 		<van-form input-align="right">
 			<van-cell-group>
 				<van-field v-model="name" label="名称" placeholder="请输入歌单名称" />
@@ -51,6 +44,7 @@ let onClickRight = () => {
 	box-sizing: border-box;
 	padding: 15px;
 }
+
 :deep(.van-nav-bar .van-icon) {
 	color: unset;
 }

@@ -29,12 +29,7 @@ let onLoad = () => {
 	<div class="follow">
 		<van-nav-bar title="关注朋友圈" fixed placeholder />
 		<div class="list">
-			<van-list
-				v-model:loading="loading"
-				:finished="finished"
-				finished-text="没有更多了~"
-				@load="onLoad"
-			>
+			<van-list v-model:loading="loading" :finished="finished" finished-text="没有更多了~" @load="onLoad">
 				<EventItem v-for="v in list" :key="v.id" :event-data="v" />
 				<van-empty v-if="!loading && list.length == 0" />
 			</van-list>
@@ -49,6 +44,7 @@ let onLoad = () => {
 	overflow: auto;
 	padding-bottom: 180px;
 	background-color: var(--my-back-color-white);
+
 	.list {
 		padding: 30px;
 	}

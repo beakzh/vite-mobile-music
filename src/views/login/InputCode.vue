@@ -45,14 +45,17 @@ watch(code, v => {
 :deep(.van-nav-bar .van-icon) {
 	color: unset;
 }
+
 .input-code {
 	padding-left: 0.5rem;
 }
+
 .code-text {
 	font-size: 0.4rem;
 	color: var(--my-text-color-black);
 	padding-top: 1.2rem;
 }
+
 .send-text {
 	font-size: 0.4rem;
 	color: var(--my-text-color-black);

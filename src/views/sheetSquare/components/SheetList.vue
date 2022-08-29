@@ -50,12 +50,7 @@ let onLoad = () => {
 
 <template>
 	<van-pull-refresh v-model="reloading" @refresh="onRefresh">
-		<van-list
-			v-model:loading="loading"
-			:finished="finished"
-			finished-text="没有更多了~"
-			@load="onLoad"
-		>
+		<van-list v-model:loading="loading" :finished="finished" finished-text="没有更多了~" @load="onLoad">
 			<van-row>
 				<van-col span="8" v-for="v in list" :key="v.id">
 					<SheetItem :sheet-data="v" />
@@ -65,4 +60,5 @@ let onLoad = () => {
 	</van-pull-refresh>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+</style>

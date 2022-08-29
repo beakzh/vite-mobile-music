@@ -36,21 +36,25 @@ let sendCode = async (): Promise<any> => {
 :deep(.van-nav-bar .van-icon) {
 	color: unset;
 }
+
 .more_marvellous {
 	font-size: 0.35rem;
 	font-weight: bold;
 	color: var(--my-text-color-black);
 	margin-bottom: 0.1rem;
 }
+
 .phone-login {
 	margin-top: 1rem;
 	margin-left: 0.5rem;
 }
+
 .phone-form {
 	border-bottom: 1px solid var(--van-button-default-border-color);
 	width: 9rem;
 	margin-bottom: 1rem;
 }
+
 :deep(.van-button) {
 	width: 8rem;
 	margin: 0 auto;

@@ -51,8 +51,8 @@ let onLoad = () => {
 	getList()
 }
 
-let delSuccess = (id:number) => {
-	const index  = list.value.findIndex(v => v.id === id)
+let delSuccess = (id: number) => {
+	const index = list.value.findIndex(v => v.id === id)
 	list.value.splice(index, 1)
 	total.value--
 }
@@ -76,15 +76,8 @@ let goSheetDetail = (id: number) => {
 		</div>
 
 		<van-list :loading="loading" :finished="finished" @load="onLoad">
-			<SheetItem
-				v-for="v in list"
-				:key="v.id"
-				:sheet-data="v"
-				:show-edit="true"
-				:hide-edit="false"
-				@del-success="delSuccess(v.id)"
-				@edit="goSheetDetail(v.id)"
-			/>
+			<SheetItem v-for="v in list" :key="v.id" :sheet-data="v" :show-edit="true" :hide-edit="false"
+				@del-success="delSuccess(v.id)" @edit="goSheetDetail(v.id)" />
 		</van-list>
 	</div>
 </template>

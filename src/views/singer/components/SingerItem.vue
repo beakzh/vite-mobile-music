@@ -28,9 +28,9 @@ function subSinger(t: number) {
 			Toast.success('取消成功')
 			followed.value = false
 		}
-	}).finally(()=> {
-        loading.value = false
-    })
+	}).finally(() => {
+		loading.value = false
+	})
 }
 </script>
 
@@ -54,15 +54,18 @@ function subSinger(t: number) {
 	align-items: center;
 	padding: 30px;
 	border-bottom: 1px solid var(--van-cell-border-color);
+
 	.left {
 		display: flex;
 		align-items: center;
 		gap: 0 20px;
+
 		img {
 			width: 100px;
 			height: 100px;
 			border-radius: 50%;
 		}
+
 		.singer-name {
 			font-size: 28px;
 			color: var(--my-text-color-black);

@@ -43,14 +43,17 @@ initData()
 <style lang="less" scoped>
 .history {
 	height: 100vh;
+
 	.scroll {
 		height: 100%;
 	}
+
 	.btn-wrapper {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+
 		.iconfont {
 			font-size: 30px;
 		}

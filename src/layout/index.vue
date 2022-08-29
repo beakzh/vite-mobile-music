@@ -42,6 +42,7 @@ $bus.on('openMenu', (): void => {
 		.van-swipe-cell__wrapper {
 			height: 100%;
 		}
+
 		.van-swipe-cell__left {
 			width: 70vw;
 		}

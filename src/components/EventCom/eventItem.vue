@@ -61,9 +61,11 @@ const songData: ComputedRef = computed(() => {
 <style lang="less" scoped>
 .event-item {
 	margin-bottom: 20px;
+
 	.top-info {
 		display: flex;
 		align-items: center;
+
 		.left {
 			.avatar {
 				width: 100px;
@@ -71,25 +73,29 @@ const songData: ComputedRef = computed(() => {
 				border-radius: 50%;
 			}
 		}
+
 		.center {
 			margin-left: 20px;
 			font-size: 30px;
 			color: var(--my-text-color-black);
 		}
 	}
+
 	.event-content {
 		padding-left: 120px;
+
 		.msg {
 			word-break: break-all;
 			font-size: 28px;
 			color: var(--my-text-color-black);
 		}
 	}
+
 	.event-bottom {
 		padding-top: 20px;
 		padding-left: 120px;
 		color: var(--my-text-color-gray);
-        font-size: 24;
+		font-size: 24;
 	}
 }
 </style>

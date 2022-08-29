@@ -82,15 +82,8 @@ getCatList()
 
 <template>
 	<div class="edit-tags">
-		<van-nav-bar
-			title="编辑标签"
-			right-text="保存"
-			left-arrow
-			fixed
-			placeholder
-			@click-left="goBack"
-			@click-right="handleSave"
-		/>
+		<van-nav-bar title="编辑标签" right-text="保存" left-arrow fixed placeholder @click-left="goBack"
+			@click-right="handleSave" />
 		<van-sticky offset-top="1.22667rem">
 			<div class="tip-info">
 				<van-icon name="info-o" />
@@ -120,18 +113,21 @@ getCatList()
 	overflow: auto;
 	box-sizing: border-box;
 	padding: 15px;
+
 	.tip-info {
 		background-color: var(--my-back-color-white);
 		font-size: 24px;
 		padding: 20px;
 		color: var(--my-text-color-gray);
 	}
+
 	.grid-container {
 		display: grid;
 		grid: auto / repeat(5, 20%);
 		border-top: 1px solid var(--my-gray-1);
 		border-left: 1px solid var(--my-gray-1);
 		margin-bottom: 60px;
+
 		.parent-name {
 			font-size: 22px;
 			grid-area: 1 / auto/ 3 / auto;
@@ -142,13 +138,16 @@ getCatList()
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+
 			.iconfont {
 				font-size: 38px;
 			}
+
 			.txt {
 				margin-top: 20px;
 			}
 		}
+
 		.children-name {
 			border-right: 1px solid var(--my-gray-1);
 			border-bottom: 1px solid var(--my-gray-1);
@@ -160,12 +159,14 @@ getCatList()
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			position: relative;
+
 			.txt-name {
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
 				line-height: 80px;
 			}
+
 			.child-check {
 				position: absolute;
 				top: 1px;

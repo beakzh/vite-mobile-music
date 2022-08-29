@@ -67,29 +67,36 @@ let edit = () => {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 	.left {
 		display: flex;
 		align-items: center;
+
 		.cover {
 			width: 100px;
 			height: 100px;
+
 			.cover-img {
 				width: 100%;
 				height: 100%;
 				border-radius: 10px;
 			}
 		}
+
 		.info {
 			margin-left: 10px;
+
 			.name {
 				font-size: 23px;
 			}
+
 			.count {
 				font-size: 23px;
 				color: var(--my-text-color-gray);
 			}
 		}
 	}
+
 	.play-btn {
 		.iconfont {
 			font-size: 25px;

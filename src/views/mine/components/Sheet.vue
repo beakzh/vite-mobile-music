@@ -16,8 +16,8 @@ const active = ref<number>(0)
 			</van-tab>
 			<van-tab title="收藏歌单">
 				<div class="box_white_container">
-                    <CollectSheet />
-                </div>
+					<CollectSheet />
+				</div>
 			</van-tab>
 		</van-tabs>
 	</div>

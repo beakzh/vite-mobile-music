@@ -28,15 +28,18 @@ const props = withDefaults(defineProps<Prop>(), {
 <style lang="less" scoped>
 .top-item {
 	padding: 30px;
+
 	.top-name {
 		color: var(--my-text-color-black);
 		font-size: 40px;
 		margin-bottom: 20px;
 		font-weight: bold;
 	}
+
 	.cover {
 		width: 300px;
 		height: 300px;
+
 		img {
 			width: 100%;
 			height: 100%;

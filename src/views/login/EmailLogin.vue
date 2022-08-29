@@ -32,13 +32,7 @@ const onSubmit = () => {
 		<van-form @submit="onSubmit">
 			<van-cell-group inset>
 				<van-field v-model="email" name="邮箱" label="邮箱" placeholder="邮箱" />
-				<van-field
-					v-model="password"
-					type="password"
-					name="密码"
-					label="密码"
-					placeholder="密码"
-				/>
+				<van-field v-model="password" type="password" name="密码" label="密码" placeholder="密码" />
 			</van-cell-group>
 			<div style="margin: 16px">
 				<van-button :loading="loading" round block type="danger" native-type="submit">

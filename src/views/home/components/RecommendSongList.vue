@@ -4,7 +4,9 @@ import Title from '@/components/Title/index.vue'
 import { getRecommendList } from '@/api/home'
 import type { songListFace } from '@/types/public'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const loading = ref<boolean>(false)
 const songList = ref<songListFace[]>()
 async function getList() {
@@ -17,16 +19,19 @@ async function getList() {
 		loading.value = false
 	}
 }
+let showMore = () => {
+	router.push('/sheetSquare')
+}
 getList()
 
 defineExpose({
-    getList
+	getList,
 })
 </script>
 
 <template>
 	<div class="recommend">
-        <Title title="推荐歌单" icon="arrow" position="right" btn-text="更多" />
+		<Title title="推荐歌单" icon="arrow" position="right" btn-text="更多" @btn-click="showMore" />
 		<van-skeleton title :row="3" :loading="loading">
 			<div class="scroll-wrapper" @touchmove="e => e.stopPropagation()">
 				<div class="list">
@@ -49,9 +54,9 @@ defineExpose({
 			//滚动条的高度
 			height: 0px;
 		}
-        .list {
-            display: flex;
-        }
+		.list {
+			display: flex;
+		}
 	}
 }
 </style>

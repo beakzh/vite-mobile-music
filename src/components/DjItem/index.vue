@@ -50,11 +50,13 @@ const props = withDefaults(defineProps<Prop>(), {
 <style lang="less" scoped>
 .dj-item {
 	margin-bottom: 20px;
+
 	.cover {
 		width: 100%;
 		height: 100%;
 		border-radius: 20px;
 		position: relative;
+
 		.playcount {
 			position: absolute;
 			top: 10px;
@@ -67,10 +69,12 @@ const props = withDefaults(defineProps<Prop>(), {
 			padding: 5px;
 			border-radius: 10px;
 			font-size: 24px;
+
 			.iconfont {
 				font-size: 24px;
 			}
 		}
+
 		.feeScope {
 			position: absolute;
 			top: 10px;
@@ -81,12 +85,14 @@ const props = withDefaults(defineProps<Prop>(), {
 			padding: 5px;
 			border-radius: 20px;
 		}
+
 		.cover-img {
 			width: 100%;
 			height: 100%;
 			border-radius: 20px;
 		}
 	}
+
 	.dj-title {
 		width: 200px;
 		font-size: 24px;
@@ -94,37 +100,44 @@ const props = withDefaults(defineProps<Prop>(), {
 		color: var(--my-text-color-black);
 	}
 }
+
 .dj-item-line {
 	display: flex;
 	width: 100%;
 	margin-bottom: 20px;
-    align-items: center;
-    img {
-        width: 150px;
-        height: 150px;
-        border-radius: 20px;
-    }
-    .info {
-        display: flex;
-        flex-direction: column;
-        margin-left: 20px;
-        gap: 15px 0;
-        .dj-name {
-            font-size: 25px;
-            font-weight: bold;
-            color: var(--my-text-color-black);
-        }
-        .dj-text {
+	align-items: center;
+
+	img {
+		width: 150px;
+		height: 150px;
+		border-radius: 20px;
+	}
+
+	.info {
+		display: flex;
+		flex-direction: column;
+		margin-left: 20px;
+		gap: 15px 0;
+
+		.dj-name {
+			font-size: 25px;
+			font-weight: bold;
+			color: var(--my-text-color-black);
+		}
+
+		.dj-text {
 			font-size: 23px;
-            color: var(--my-text-color-gray);
-        }
-        .dj-count {
+			color: var(--my-text-color-gray);
+		}
+
+		.dj-count {
 			font-size: 23px;
-            color: var(--my-text-color-gray);
+			color: var(--my-text-color-gray);
+
 			.iconfont {
 				margin-right: 5px;
 			}
-        }
-    }
+		}
+	}
 }
 </style>

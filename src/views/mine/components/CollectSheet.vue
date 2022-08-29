@@ -77,15 +77,8 @@ onLoad()
 		</div>
 
 		<van-list :loading="loading" :finished="finished" @load="onLoad">
-			<SheetItem
-				v-for="v in list"
-				:key="v.id"
-				:sheet-data="v"
-				:show-edit="true"
-				:hide-edit="true"
-				@del-success="delSuccess(v.id)"
-				@edit="goSheetDetail(v.id)"
-			/>
+			<SheetItem v-for="v in list" :key="v.id" :sheet-data="v" :show-edit="true" :hide-edit="true"
+				@del-success="delSuccess(v.id)" @edit="goSheetDetail(v.id)" />
 		</van-list>
 	</div>
 </template>

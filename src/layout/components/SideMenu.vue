@@ -120,9 +120,7 @@ let loginOut = async () => {
 				</van-cell>
 			</van-cell-group>
 		</div>
-		<van-button v-if="isLogin" :loading="loading" type="danger" round block @click="loginOut"
-			>退出登录</van-button
-		>
+		<van-button v-if="isLogin" :loading="loading" type="danger" round block @click="loginOut">退出登录</van-button>
 	</div>
 </template>
 
@@ -131,42 +129,51 @@ let loginOut = async () => {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 	.left {
 		display: flex;
 		align-items: center;
+
 		.avatarUrl {
 			width: 1.1rem;
 			height: 1.1rem;
 			border-radius: 50%;
 			margin-right: 0.2rem;
 		}
+
 		.nickname {
 			font-size: 0.412rem;
 			color: var(--my-text-color-black);
 		}
+
 		:deep(.van-icon) {
 			font-size: 0.45rem;
 			line-height: 0.2rem;
 		}
 	}
+
 	.right {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 }
+
 .sideMenu {
 	background: var(--my-back-color-gray);
 	height: 100%;
 	padding: 0.4rem;
 }
+
 .unlogin {
 	display: flex;
 	align-items: center;
+
 	.iconfont {
 		font-size: 0.7rem;
 		color: var(--my-text-color-black);
 	}
+
 	.text {
 		margin-left: 0.2rem;
 		font-size: 0.4rem;
@@ -174,20 +181,25 @@ let loginOut = async () => {
 		margin-top: 0.2rem;
 	}
 }
+
 .box-container {
 	margin-top: 0.5rem;
+
 	.box-title {
 		color: #999;
 		font-size: 0.35rem;
 	}
+
 	:deep(.van-cell-group--inset) {
 		margin: unset;
 	}
+
 	.iconfont {
 		font-size: 0.45rem;
 		margin-right: 0.1rem;
 	}
 }
+
 :deep(.van-button) {
 	margin-top: 0.5rem;
 	background-color: var(--my-back-color-white);

@@ -20,11 +20,8 @@ const props = withDefaults(defineProps<Prop>(), {
 <template>
 	<div class="sheet-item">
 		<div class="cover">
-			<img
-				:src="sheetData.coverImgUrl + '?param=140y140'"
-				alt=""
-				v-lazy="sheetData.coverImgUrl + '?param=140y140'"
-			/>
+			<img :src="sheetData.coverImgUrl + '?param=140y140'" alt=""
+				v-lazy="sheetData.coverImgUrl + '?param=140y140'" />
 		</div>
 		<div class="play-count">
 			<i class="iconfont icon-bofang"></i>
@@ -42,6 +39,7 @@ const props = withDefaults(defineProps<Prop>(), {
 	height: 100%;
 	box-sizing: border-box;
 	position: relative;
+
 	.cover {
 		img {
 			width: 100%;
@@ -49,19 +47,21 @@ const props = withDefaults(defineProps<Prop>(), {
 			border-radius: 20px;
 		}
 	}
+
 	.play-count {
 		position: absolute;
 		top: 30px;
 		right: 30px;
 		display: flex;
 		align-items: center;
-        gap: 0 5px;
+		gap: 0 5px;
 		font-size: 28px;
 		background: rgba(0, 0, 0, 0.2);
 		padding: 2px 5px;
 		border-radius: 8px;
 		color: var(--my-text-color-white);
 	}
+
 	.song-title {
 		color: var(--my-text-color-black);
 		font-size: 25px;

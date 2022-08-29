@@ -26,15 +26,11 @@ const props = withDefaults(defineProps<Prop>(), {
 <template>
 	<div class="songlist-item">
 		<div class="cover">
-			<img
-				class="cover-img"
-				:src="
-					songListData.picUrl
-						? songListData.picUrl
-						: songListData.coverImgUrl + '?param=140y140'
-				"
-				alt=""
-			/>
+			<img class="cover-img" :src="
+				songListData.picUrl
+					? songListData.picUrl
+					: songListData.coverImgUrl + '?param=140y140'
+			" alt="" />
 			<div class="playcount">
 				<i class="iconfont icon-bofang"></i>
 				<div>{{ formatCountNumber(songListData.playCount) }}</div>
@@ -48,11 +44,13 @@ const props = withDefaults(defineProps<Prop>(), {
 .songlist-item {
 	width: 220px;
 	flex-shrink: 0;
+
 	.cover {
 		width: 200px;
 		height: 200px;
 		border-radius: 20px;
 		position: relative;
+
 		.playcount {
 			position: absolute;
 			top: 15px;
@@ -65,16 +63,19 @@ const props = withDefaults(defineProps<Prop>(), {
 			padding: 5px;
 			border-radius: 10px;
 			font-size: 24px;
+
 			.iconfont {
 				font-size: 24px;
 			}
 		}
+
 		.cover-img {
 			width: 100%;
 			height: 100%;
 			border-radius: 20px;
 		}
 	}
+
 	.song-list-title {
 		width: 200px;
 		font-size: 24px;
