@@ -4,25 +4,30 @@ import MvItem from '@/components/MvItem/index.vue'
 import { getNewMvList } from '@/api/home'
 import type { MvInterface } from '@/types/public/mv'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const loading = ref<boolean>(false)
 const mvList = ref<MvInterface[]>([])
 async function getList() {
 	loading.value = true
 	try {
-        loading.value = false
+		loading.value = false
 		const res: any = await getNewMvList({ limit: 10 })
 		mvList.value = res.data
 	} catch {
 		loading.value = false
 	}
 }
+let showMore = () => {
+	router.push('/mv')
+}
 getList()
 </script>
 
 <template>
 	<div class="mv">
-		<Title title="最新MV" icon="play" position="left" btn-text="更多" />
+		<Title title="最新MV" icon="play" position="left" btn-text="更多" @btn-click="showMore" />
 		<van-skeleton title :row="1" :loading="loading">
 			<MvItem v-for="(v, i) in mvList" :key="i" :mv-data="v" />
 		</van-skeleton>

@@ -70,6 +70,12 @@ const routes: Array<RouteRecordRaw> = [
 		name: 'Album',
 		component: _ => import('@/views/album/index.vue'),
 	},
+	// mv排行
+	{
+		path: '/mv',
+		name: 'Mv',
+		component: _ => import('@/views/mv/index.vue'),
+	},
 	{
 		path: '/login',
 		name: 'Login',
