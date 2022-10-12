@@ -13,7 +13,6 @@ let getSearchDefault = async () => {
 	const res: any = await reqSearchDefault()
 	showKeyword.value = res.data.showKeyword
 }
-console.log('test')
 
 let openMenu = () => $bus.emit('openMenu')
 
